@@ -1,4 +1,4 @@
-# Conhecendo AngularJS para iniciantes como eu.
+# Conhecendo AngularJS.
 
 Instruções:
 
