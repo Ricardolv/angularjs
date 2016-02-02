@@ -1,0 +1,19 @@
+<!-- 
+ O template não necessita informar o seu controller, pois isso já foi feito pelo módulo do AngularJS(app.js). 
+ Como a variável fruits possui um escopo global, ela pode ser usada pelo template
+ e na linha 15, contamos quantos itens existem no array.
+ 
+ Na linha 17 iniciamos a repetição dos elementos que pertencem ao array fruits e incluímos na
+ repetição um link para #/edit/. 
+
+ Esta é a forma com que o roteamento do AngularJS funciona, iniciando com # e repassando a URI logo a seguir. 
+ Na linha 19, criamos outro link, para incluir um novo registro. 
+
+ Novamente usamos a URI que será utilizada pelo roteamento do AngularJS. 
+ -->
+
+<h2>Fruits ({{fruits.length}})</h2>
+<ul>
+	<li ng-repeat="fruit in fruits"><a href="#/edit/{{fruit}}">{{fruit}}</a></li>
+</ul>
+<a href="#/new">New</a>

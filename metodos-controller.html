@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Entendendo Métodos do Controller</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/countController.js"></script>
+</head>
+<body>
+  <div class="container">
+  	<div class="row">
+	  		<span class="pull-left"><a href="index.html">Home</a></span>
+	</div>
+
+  	<h1>Métodos do Controller</h1><br />
+
+  	<p>Um controller é, na maioria das vezes, um arquivo JavaScript que contém funcionalidades pertinen-tes
+  	   à alguma parte do documento HTML. Não existe uma regra para o controller, como por exemplo
+       ter um controller por arquivo HTML, mas sim uma forma de sintetizar as regras de negócio (funções
+       javascript) em um lugar separado ao documento HTML.</p>
+
+	<p>Simples exemplo de contador</p>
+
+	<div class="row">
+	  	<div class="well">
+	  		
+	  		 <div ng-app="app">
+	  		 	
+			    <div ng-controller="countController">
+					
+					<a href="#" ng-click="addOne()">Add 1</a>
+					<hr />
+					<p>Counter value: {{counter}}</p>
+
+			    </div>
+        
+
+			 </div>
+
+		</div>
+	</div>
+
+	<div class="row">
+	 	<div class="well">
+	 		<p>Neste exemplo, usamos a propriedade ng-click que irá chamar um método dentro do seu respectivo controller.</p>
+	 		<p>No controller, criamos a variável counter e também o método addOne , que manipula a variável, de
+			   forma que o seu valor é refletido automaticamente na view (html) através do dataBind.</p>
+
+	 	</div>
+	</div>
+
+  	<div class="row">
+	  		<span class="pull-left"><a href="controller.html">&lt;&lt; Controller </a></span>
+	  		<span class="pull-right"><a href="loops.html">Loops &gt;&gt;</a></span>
+	</div>
+
+  </div>
+</body>
+</html>

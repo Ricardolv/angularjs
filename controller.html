@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Entendendo Controller</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/simpleController.js"></script>
+</head>
+<body>
+  <div class="container">
+  	<div class="row">
+	  		<span class="pull-left"><a href="index.html">Home</a></span>
+	</div>
+
+  	<h1>Controller</h1><br />
+
+  	<p>Um controller é, na maioria das vezes, um arquivo JavaScript que contém funcionalidades pertinen-tes
+  	   à alguma parte do documento HTML. Não existe uma regra para o controller, como por exemplo
+       ter um controller por arquivo HTML, mas sim uma forma de sintetizar as regras de negócio (funções
+       javascript) em um lugar separado ao documento HTML.</p>
+
+	<p>Uso do controller:</p>
+
+	<div class="row">
+	  	<div class="well">
+
+	  		 <div ng-app="app">
+	  		 	
+	  		 	<div ng-controller="simpleController">
+
+			  	  	Hello: <input type="text" ng-model="user.name"/><br />
+					<hr/>
+				  	Hello: {{user.name}}
+
+			    </div>
+
+			    
+
+			 </div>
+
+		</div>
+	</div>
+	<div class="row">
+	 	<div class="well">
+
+	 		<p>No exemplo 1, após incluir o arquivo simpleController.js , usamos a propriedade ng-controller
+			   para dizer que, todo elemento abaixo de um elemento "div" no nosso exemplo, no caso de um desenvolvimento real seria em um elemento "body", será gerenciado pelo controller.</p>
+			<p>Adicionamos uma caixa de texto utilizando a propriedade ng-model e atribuímos o valor user.name.
+			   Neste caso, user é um objeto e name é uma propriedade a este objeto, temos
+			   o uso do bind no objeto user .</p>
+	 	</div>
+	</div>
+
+  	<div class="row">
+	  		<span class="pull-left"><a href="data-bind.html">&lt;&lt; DataBind</a></span> 
+	  		<span class="pull-right"><a href="metodos-controller.html">Métodos do controller &gt;&gt;</a></span>
+	</div>
+
+  </div>
+</body>
+</html>

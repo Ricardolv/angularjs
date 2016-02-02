@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Entendendo Rotas e Deep linking</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-route.js"></script>
+  <script src="js/app.js"></script>
+</head>
+<body ng-app="app">
+  <div class="container">
+  	<div class="row">
+	  		<span class="pull-left"><a href="index.html">Home</a></span>
+	</div>
+
+  	<h1>Rotas e Deep linking</h1><br />
+
+  	<p>O AngularJS possui um recurso chamado Deep Linking, que consiste em criar rotas na URI do
+	   documento HTML para manipular partes do código HTML de forma independente, podendo assim
+	   separar ainda mais as camadas da sua aplicação. No caso mais simples, suponha que exista uma lista
+	   de dados que são exibidos em uma tabela, e que ao clicar em um item desta lista, deseja-se exibir
+	   um formulário com os dados daquela linha.</p>
+	<p>No documento HTML criado, existem dois componentes bem definidos pela aplicação. O primeiro
+	   é a tabela com as informações, e o segundo, o formulário para edição dos dados.</p>
+
+	<div class="row">
+	  	<div class="well">
+	  		O uso de DeepLinking usa Ajax para carregar templates de forma dinâmica, então é necessário que
+			todo o exemplo seja testado em um servidor web.
+
+	  	</div>
+	</div>	
+
+	<div class="row">
+		<p>Se organizarmos esta pequena aplicação em arquivos, teremos:</p>
+		<p><strong>index.html</strong></p>
+	  	<div class="well">
+			O arquivo principal da aplicação, que contém o código html, o ng-app, a inclusão do
+			AngularJS, entre outras propriedades.
+		</div>
+
+		<p><strong>app.js</strong></p>
+		<div class="well">
+			Contém todo o código javascript que define as regras de negócio da aplicação.
+		</div>
+
+		<p><strong>list.html</strong></p>
+		<div class="well">
+			Contém a tabela que lista os dados.
+		</div>
+
+		<p><strong>form.html</strong></p>
+		<div class="well">
+			Contém o formulário de edição e criação de um novo registro.
+		</div>
+	</div>
+
+	<div class="row">
+	  	
+		<p>Inicialmente criaremos o arquivo index.html, que contém a chamada aos arquivos javascript da
+	       aplicação. Além dos arquivos javaScript, também usaremos a propriedade ng-app, que já aprendemos
+	       a usar em qualquer aplicação que use o framework.</p>
+		<p>Também adicionaremos um segundo arquivo javascript, que é responsável pelo gerenciamento da rota,
+	       chamado de  'angular-route.js'.</p>
+	    
+	    <!-- Considerar esta div como uma pagina index.html -->
+	  	<p>index.html</p>
+	  	<div class="well">
+
+	  		 <h1>DeepLink Example</h1>
+			 <div ng-view></div>
+
+		</div>
+
+	    <div class="well">
+
+	  		<h1>Atenção</h1>
+			<p>Se você olhar bem a inclusão do arquivo javscript, irá perceber que incluímos o arquivo angular.js
+			 e não angular.min.js.</p>
+			<p>Isso foi feito para mostrar que ambas os arquivos funcionam, mas o arquivo “minificado” com a
+			 extensão .min.js é incompreensível para que possamos detectar erros de javascript.</p>
+			<p>Já o arquivo angular.js é compreensível para nossa leitura e os erros de javascript que por ventura
+		     cometemos poderão ser analisados com mais eficiência.</p>
+			<p>Resumindo, use o arquivo angular.min.js somente quando o seu sistema está pronto e em
+			 produção. Caso contrário, use o arquivo angular.js</p>
+
+		</div>
+
+	</div>
+
+	<p>Os outros arquivos (app.js, list.html, form.html), econtraram comentários explicando em detalhes de como foi implementado as rotas.</p>
+
+  	<div class="row"> 
+	  		<span class="pull-left"><a href="formularios.html">&lt;&lt; Formulários </a></span>
+	</div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Uso do $resource</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-resource.js"></script>
+  <script src="js/exemplo-resource.js"></script>
+
+
+</head>
+<body>
+  <div class="container">
+
+    <div class="row">
+	  	<span class="pull-left"><a href="index.html">Home</a></span>
+    </div>
+
+  	<h1>Uso do $resource</h1><br />
+
+  	<p>Aprendemos a realizar chamadas Ajax através do $http e caso haja necessidade, podemos abstrair
+	   ainda mais a forma como o AngularJS acessa o servidor.
+	   Neste contexto entra o $resource que estabelece um padrão de comunicação RESTfull entre a
+	   aplicação e o servidor.
+	   Para que possamos usar esta biblioteca é preciso adicionar o arquivo angular-resource.js no
+	   documento HTML.</p>
+    
+    <p>Com a biblioteca devidamente instalada, devemos carregá-la, através de um parâmetro na criação do
+       módulo da aplicação. Para acompanhar este processo, vamos criar um exemplo simples, utilizando
+	   operações CRUD com o $resource.</p>
+
+    <p>index.html</p>
+	<div class="row" >
+	 	<div class="well">
+ 			
+ 			<div ng-app="app">
+	  		 	<div ng-controller="phoneController">
+					
+					<input type="text" ng-model="idPhone" value="1"/>
+					<button ng-click="getPhoneById()">GetPhone By Id</button>
+					<hr/>
+					<button ng-click="getPhones()">GetPhones</button>
+					<hr/>
+					<button ng-click="savePhone()">Save Phone</button>
+					<hr/>
+					<button ng-click="deletePhone()">Delete Phone</button>
+				
+				</div>
+
+			</div>
+	 	
+	 	</div>
+	</div>
+
+  	<p>Este exemplo está em sua forma mais simples e possivelmente o resource não sera criado em um
+ 	   controller da aplicação. </p>
+
+  	<div class="row"> 
+	  		<span class="pull-left"><a href="http-uso.html">&lt;&lt; Uso do $http </a></span>
+	</div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Exemplo do $http</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/exemplo-http.js"></script>
+</head>
+<body>
+  <div class="container">
+
+  	<div class="row">
+	  	<span class="pull-left"><a href="index.html">Home</a></span>
+    </div>
+
+  	<h1>Exemplo do $http</h1><br />
+
+  	<p>Vamos criar um exemplo utilizando o serviço $http, para obter uma lista de dados e preencher
+	   uma tabela. Inicialmente, criamos um arquivo simples no servidor que, em teoria, retornaria com
+	   informações de uma lista de objetos em JSON. Como ainda não estamos trabalhando com banco de
+	   dados, esta lista será criada diretamente no arquivo, em formato json.</p>
+	
+	<div class="row"> 
+		<div class="well">
+			{ "fruits":<br />
+				<spacer />[<br />
+					{<br />
+					"id": 1,<br />
+					"name": "Apple",<br />
+					"color": "Red"<br />
+					},<br />
+					{<br />
+					"id": 2,<br />
+					"name": "Banana",<br />
+					"color": "Yellow"<br />
+					},<br />
+					{<br />
+					"id": 3,<br />
+					"name": "watermelon",<br />
+					"color": "Green"<br />
+					},<br />
+					{<br />
+					"id": 4,<br />
+					"name": "Orange",<br />
+					"color": "Orange"<br />
+					}<br />
+				]<br />
+			}
+		</div>
+    </div>
+    
+    <p>O próximo passo é criar o arquivo index.html, que contém a camada view do exemplo.</p>
+
+    <p>index.html</p>
+	<div class="row" >
+	 	<div class="well">
+ 			
+ 			<div ng-app="app">
+	  		 	<div ng-controller="appController">
+					
+					<button ng-click="getData()">Get Data</button>
+					<h2 ng-show="fruits.length>0">Fruits</h2>
+					<ul>
+						<li ng-repeat="fruit in fruits" >
+							{{fruit.id}} - {{fruit.name}} ({{fruit.color}})
+						</li>
+					</ul>
+				
+				</div>
+
+			</div>
+	 	
+	 	</div>
+	</div>
+
+  	<p>Além dos cabeçalhos, o AngularJS também serializa o objeto JSON que é repassado entre as
+	   requisições. Se um objeto é enviado para o servidor, ele é convertido para JSON. Se uma string
+       JSON retorna do servidor, ela é convertida em objeto utilizando um parser JSON.</p>
+
+  	<div class="row"> 
+	  		<span class="pull-left"><a href="http-uso.html">&lt;&lt; Uso do $http </a></span>
+	  		<span class="pull-right"><a href="resource-uso.html"> Uso do $resource &gt;&gt;</a></span>
+	</div>
+
+  </div>
+</body>
+</html>

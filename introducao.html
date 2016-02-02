@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Introdução</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+  <div class="container">
+
+  	<h1>Conectando AngularJS ao servidor - Introdução</h1><br />
+
+  	<p>Agora que conhecemos um pouco sobre o AngularJS, podemos entender como funciona a sua
+	   comunicação com o servidor. Assim como é feito com jQuery e até com javascript puro, a melhor
+       forma de obter e enviar dados para o servidor é através de Ajax e o formato de dados para se usar
+       nesta comunicação é JSON.</p>
+
+	<p>Existem diversas formas de conexão entre cliente (neste caso, AngularJS) e servidor, e nesta obra
+       estaremos utilizando um conceito chamado RESTful, que é uma comunicação HTTP que segue um
+       padrão bastante simples, utilizando cabeçalhos HTTP como POST, GET, PUT, DELETE.</p>
+
+    <p>Na forma mais simples de comunicação de dados, onde temos um objeto e as ações de criar, editar,
+	   listar e deletar objetos, resumimos o padrão RESTful às seguintes ações:</p>
+
+	<center>
+	<div class="row-fluid-50" >
+	 	<div class="well">
+
+	 		<span class="pull-left"><strong>Método</strong></span>
+	 		<span class="pull-right"><strong>http://site.com/produtos</strong></span>
+	 		<hr/>
+	 		<span class="pull-left">GET</span>
+	 		<span class="pull-right">Listar todos os produtos</span><br />
+	 		<span class="pull-left">POST</span>
+	 		<span class="pull-right">Editar uma lista de produtos</span><br />
+	 		<span class="pull-left">PUT</span>
+	 		<span class="pull-right">Criar um novo produto na lista de produtos</span><br />
+	 		<span class="pull-left">DELETE</span>
+	 		<span class="pull-right">Excluir uma lista de produtos</span><br />
+			
+	 	</div>
+	</div>
+
+	<div class="row-fluid-50" >
+	 	<div class="well">
+
+	 		<span class="pull-left"><strong>Método</strong></span>
+	 		<span class="pull-right"><strong>http://site.com/produto/1</strong></span>
+	 		<hr/>
+	 		<span class="pull-left">GET</span>
+	 		<span class="pull-right">Obter o produto cujo id é 1</span><br />
+	 		<span class="pull-left">POST</span>
+	 		<span class="pull-right">Em teoria nao possui funcionalidade</span><br />
+	 		<span class="pull-left">PUT</span>
+	 		<span class="pull-right">Edita ou cria um novo produto</span><br />
+	 		<span class="pull-left">DELETE</span>
+	 		<span class="pull-right">Exclui um produto cujo o id é 1</span><br />
+			
+	 	</div>
+	</div>
+	</center>
+
+	<p>As tabelas acima são uma sugestão que pode ser seguido ou não. Mesmo se simplificarmos os
+       métodos acima, o mínimo que podemos estabelecer é que métodos GET não alterem dados, pois
+       um método GET pode ser facilmente acessado através do navegador.</p>
+
+    <p>O AgularJS fornece duas formas distintas de trabalhar com estas conexões. A primeira delas, e mais
+	   simples, é através do serviço $http , que pode ser injetado em um controller. A segunda forma é
+       através do serviço $resource que é uma abstração RESTful, funcionando como um data source.</p>
+
+  	<div class="row"> 
+	  		<span class="pull-left"><a href="index.html">&lt;&lt; Home </a></span>
+	  		<span class="pull-right"><a href="http-uso.html"> Uso do $http &gt;&gt;</a></span>
+	</div>
+
+  </div>
+</body>
+</html>

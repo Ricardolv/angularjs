@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Uso do $http</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+  <div class="container">
+  
+  <div class="row">
+	  	<span class="pull-left"><a href="index.html">Home</a></span>
+  </div>
+
+  	<h1>Uso do $http</h1><br />
+
+  	<p>O uso do $http não deve ser ignorado, mesmo que o $resource seja mais poderoso. Em aplicações
+	   simples, ou quando deseja obter dados de uma forma rápida, deve-se utilizar $http.</p>
+	
+	<div class="row"> 
+		<div class="well">
+			$http é uma implementação ajax através do XMLHttpRequest utilizando JSONP. Iremos sempre
+		    usar JSON para troca de dados entre cliente e servidor.
+		</div>
+    </div>
+    
+    <p>$http na sua forma mais simples.</p>
+	<div class="row" >
+	 	<div class="well">
+
+		 		$http({method:'GET', url:'/someUrl'}).success(function(data){ <br /><br />
+				});
+			
+	 	</div>
+	</div>
+
+	<p>O método get pode ser generalizado para: $http.get .</p>
+	<div class="row" >
+	 	<div class="well">
+
+	 		$http.get('/someUrl').success(function(data){ <br /><br />
+			});
+			
+	 	</div>
+	</div>
+	
+
+	<p>Assim como existe o get, existem os outros também, conforme a lista a seguir:</p>
+	<div class="row" >
+		<div class="well">
+  			<ul>
+	  			<li>$http.get</li>  
+	  			<li>$http.head</li> 
+        		<li>$http.post</li>
+        		<li>$http.put</li>
+        		<li>$http.delete</li>
+        		<li>$http.jsonp</li>
+	  		</ul>
+  		</div>
+  	</div>
+
+    <p>Para todos estes métodos, o AngularJS configura automaticamente o cabeçalho da requisição HTTP.
+       Por exemplo, em uma requisição POST os cabeçalhos preenchidos são:</p>
+
+    <div class="row">
+    	<div class="well">
+  			<ul>
+	  			<li>Accept: application/json, text/plain, * / *</li>  
+	  			<li>X-Requested-With: XMLHttpRequest</li> 
+        		<li>Content-Type: application/json</li>
+	  		</ul>
+  		</div>
+  	</div>
+
+  	<p>Além dos cabeçalhos, o AngularJS também serializa o objeto JSON que é repassado entre as
+	   requisições. Se um objeto é enviado para o servidor, ele é convertido para JSON. Se uma string
+       JSON retorna do servidor, ela é convertida em objeto utilizando um parser JSON.</p>
+
+  	<div class="row"> 
+	  		<span class="pull-left"><a href="introducao.html">&lt;&lt; Introdução </a></span>
+	  		<span class="pull-right"><a href="http-exemplo.html"> exemplo com $http &gt;&gt;</a></span>
+	</div>
+
+  </div>
+</body>
+</html>

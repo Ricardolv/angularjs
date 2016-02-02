@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Entendendo DataBind</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="lib/angular/angular.js"></script>
+</head>
+<body>
+  <div class="container">
+	  <h1>DataBind</h1><br />
+
+	  <p>Uma das principais vantagens do AngularJS é o seu DataBind. Este termo é compreendido como
+		 uma forma de ligar automaticamente uma variável qualquer a uma outra. Geralmente, o DataBind
+		 é usado para ligar uma variável do JavaScript (ou um objeto) a algum elemento do documento HTML.</p>
+	  <p>Exemplo de DataBind:</p>
+	  
+	  <div class="row">
+	  	<div class="well"> 
+	  		 <div ng-app>
+	  	
+			  	    <span class="pull-right">exemplo: 1</span> 
+			  	  		Hello: <input type="text" ng-model="yourName"/><br />
+				  		Hello: {{yourName}} 
+		  	  		<hr/>
+			  	 	
+			  		<span class="pull-right">exemplo: 2</span> 
+			        	Digita aí: <input type="text" ng-model="meutexto"><br />	
+			            Olha aí,  {{'você digitou: ' + meutexto}}
+			  		<hr/>
+			  	 
+			  		<span class="pull-right">exemplo: 3</span> 
+		      	 		E com select?
+		      		<select  ng-model="myoption">
+		        		<option value="1°">Primeiro</option>
+		        		<option value="2°">Segundo</option>
+		        		<option value="3°">Terceiro</option>
+		      		</select><br />	
+		      			Você escolheu: <strong>{{ myoption }}</strong>
+			       		      
+			  </div> 		
+	  	</div>
+	  </div>
+	  <div class="row">
+	 	<div class="well"> 
+	 	<p>Além da propriedade ng-app, utilizamos para DataBind a propriedade ng-model, 
+	 	   para informar que este elemento estará ligado a uma variável do AngularJS, através da variável yourName, no exemplo 1.
+		   Isso significa que qualquer alteração na caixa de texto irá atualizar o valor da variável, 
+		   temos a chamada à variável através do comando {{yourName}}, que imprime o valor da variável.</p>
+		<p>Como o DataBind é dinâmico, ao mesmo tempo que algo é escrito na caixa de texto, o
+		   seu referido bind é realizado, atualizando instantaneamente o seu valor. 
+		   Bind também pode ser realizado em objetos, mas antes de começar a aumentar a complexidade do
+		   código, vamos criar um controller para melhorar a organização do código.</p>
+	 	</div>
+	  </div>
+	   
+	  <div class="row">
+	  		<span class="pull-left"><a href="index.html">&lt;&lt; Home</a></span>
+	  		<span class="pull-right"><a href="controller.html">Controller &gt;&gt;</a></span>
+	  </div>
+  </div>
+</body>
+</html>

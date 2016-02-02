@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Simple Form</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="lib/angular/angular.js"></script>
+</head>
+<body ng-app>
+  <div class="container">
+  	<div class="row">
+	  		<span class="pull-left"><a href="index.html">Home</a></span>
+	</div>
+
+  	<h1>Formulários</h1><br />
+
+  	<p>Existem diversas características que um formulário contém, tais como validação, mensagens de erro,
+	   formato dos campos, entre outros. Neste caso, usamos o AngularJS de diferentes formas, 
+	   e usamos vários parâmetros ng para controlar todo o processo.</p>
+	<p>O exemplo a seguir exibe apenas algumas dessas propriedades, para que você possa entender como o
+	   processo funciona, mas durante a obra iremos verificar todos os detalhes necessários para construir
+       um formulário por completo.</p>
+
+	<p>Formulário com validação:</p>
+
+	<div class="row">
+	  	<div class="well">
+
+	  		 <form name="myForm">
+				<span ng-show="myForm.$invalid">
+					Found erros in the form!
+				</span>
+				<input type="text" ng-model="name" name="Name" value="Your Name" required />
+				<button ng-disabled="myForm.$invalid">Save</button>
+			</form>
+
+		</div>
+	</div>
+	<div class="row">
+	 	<div class="well">
+
+	 		<p>Neste formulário, usamos mais algumas propriedades, como por exemplo ng-show que irá exibir ou
+			   não a tag "span" contendo a mensagem de erro do formulário, e ng-disabled que desativa o botão
+			   de submissão do formulário.</p>
+			<p>O uso do myForm.$invalid é um recurso do AngularJS que define se um formulário está inválido
+			   ou não. Como usamos uma caixa de texto com a propriedade required, se o campo não estiver
+			   preenchido, o formulário ficará inválido.</p>
+
+	 	</div>
+	</div>
+
+  	<div class="row"> 
+	  		<span class="pull-left"><a href="loops.html">&lt;&lt; Loops </a></span>
+	  		<span class="pull-right"><a href="rotas.html"> Rotas e Deep linking &gt;&gt;</a></span>
+	</div>
+
+  </div>
+</body>
+</html>

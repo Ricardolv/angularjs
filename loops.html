@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Entendendo Loops</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="lib/angular/angular.js"></script>
+</head>
+<body>
+  <div class="container">
+  	<div class="row">
+	  		<span class="pull-left"><a href="index.html">Home</a></span>
+	</div>
+
+  	<h1>Loops</h1><br />
+
+  	<p>Outra característica do AngularJS é utilizar templates para que se possa adicionar conteúdo
+	   dinâmico. Um loop é sempre realizado através da propriedade ng-repeat e obedece a uma variável
+	   que geralmente é um array de dados.</p>
+
+	<p>Usando loops:</p>
+
+	<script type="text/javaScript">
+		var app = angular.module('app', []);
+		
+		app.controller('loopController', function ($scope) {
+			$scope.fruits = ['banana','apple','orange'];
+		});
+	</script>
+
+	<div class="row">
+	  	<div class="well">
+
+	  		 <div ng-app="app">
+	  		 	
+	  		 	<div ng-controller="loopController">
+
+			  	  	<ul>
+						<li ng-repeat="fruit in fruits">{{fruit}}</li>
+					</ul>
+
+			    </div>
+
+			 </div>
+
+		</div>
+	</div>
+	<div class="row">
+	 	<div class="well">
+
+	 		<p>Como visto neste exemplo, pode-se adicionar JavaScript no arquivo HTML, mas não recomenda-se
+			   esta prática. É uma boa prática de programação utilizar o arquivo HTML apenas como a camada
+	 		   view, e o arquivo JavaScript como a camada de controller, de acordo com os padrões MVC.</p>
+			
+	 	</div>
+	</div>
+
+  	<div class="row"> 
+	  		<span class="pull-left"><a href="metodos-controller.html">&lt;&lt; Métodos do controller </a></span>
+	  		<span class="pull-right"><a href="formularios.html">Formulários&gt;&gt;</a></span>
+	</div>
+
+  </div>
+</body>
+</html>
